@@ -46,6 +46,197 @@
 	      and allows us to accumulate a comprehensive set of actions that are related to a given entity type.
 	      The returned actions will be assessed by crowdsourcing to score 1 to 5.
 	      Then, nDCG will be used to evaluate submitted runs.</p>
+	    <dd>
+	      <dt>Sample data</dt>
+	    </dd><br/>   
+		<table border=1>
+		<thead>
+		<tr>
+		<th style="text-align:left">Entity</th>
+		<th style="text-align:left">Types</th>
+		<th style="text-align:left">Verb</th>
+		<th style="text-align:left">Object</th>
+		<th style="text-align:left">Wikipedia</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<td style="text-align:left">Final Fantasy VIII</td>
+		<td style="text-align:left">Product</td>
+		<td style="text-align:left">play</td>
+		<td style="text-align:left">on android</td>
+		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Final_Fantasy_VIII">https://en.wikipedia.org/wiki/Final_Fantasy_VIII</a></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">watch</td>
+		<td style="text-align:left">videos of other players</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">buy</td>
+		<td style="text-align:left">new weapons</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">compare</td>
+		<td style="text-align:left">with other games</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">learn</td>
+		<td style="text-align:left">junction system</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left">Zambia</td>
+		<td style="text-align:left">Place</td>
+		<td style="text-align:left">mine</td>
+		<td style="text-align:left">copper</td>
+		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Zambia">https://en.wikipedia.org/wiki/Zambia</a></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">prospect</td>
+		<td style="text-align:left">for minerals</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">produce</td>
+		<td style="text-align:left">row crops</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">visit</td>
+		<td style="text-align:left">Kafue National Park</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">watch</td>
+		<td style="text-align:left">national football games</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left">Yo-Yo Ma</td>
+		<td style="text-align:left">Person</td>
+		<td style="text-align:left">transliterate</td>
+		<td style="text-align:left">his name in Chinese</td>
+		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Yo-Yo_Ma">https://en.wikipedia.org/wiki/Yo-Yo_Ma</a></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">list</td>
+		<td style="text-align:left">cellos he has ever owned</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">watch</td>
+		<td style="text-align:left">his performance at Apple keynotes</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">listen</td>
+		<td style="text-align:left">The Goat Rodeo Sessions</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">buy</td>
+		<td style="text-align:left">a tickt of his concert</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left">York University</td>
+		<td style="text-align:left">Organisation</td>
+		<td style="text-align:left">visit</td>
+		<td style="text-align:left">York University Observatory</td>
+		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/York_University">https://en.wikipedia.org/wiki/York_University</a></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">apply</td>
+		<td style="text-align:left">for an undergraduate program</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">defer</td>
+		<td style="text-align:left">an offer</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">stay</td>
+		<td style="text-align:left">in a residence</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">read</td>
+		<td style="text-align:left">Excalibur (university newspaper)</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left">Wireles Festival</td>
+		<td style="text-align:left">Event</td>
+		<td style="text-align:left">sponsor</td>
+		<td style="text-align:left">the event</td>
+		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Wireless_Festival">https://en.wikipedia.org/wiki/Wireless_Festival</a></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">buy</td>
+		<td style="text-align:left">a ticket for one day</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">camp</td>
+		<td style="text-align:left">at the site</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">contact</td>
+		<td style="text-align:left">for press enquiries</td>
+		<td style="text-align:left"></td>
+		</tr>
+		<tr>
+		<td style="text-align:left"></td>
+		<td style="text-align:left"></td>
+		<td style="text-align:left">reserve</td>
+		<td style="text-align:left">a big green coach</td>
+		<td style="text-align:left"></td>
+		</tr>
+		</tbody>
+		</table>
 	    <br/>
 	    <h4>Actionable Knowledge Graph Generation Subtask (AKGG):</h4>
 	    <dd>
@@ -61,6 +252,7 @@
 	      Effectiveness of returned properties will be judged by pair-wise comparison performed by crowdsourcing for all pairs of submitted runs.
 	      We are currently considering to propose a new metric that can take preference
 	      based judgements into account, by applying Bradley-Terry model.</p>
+	      
 	  </div>
 	</div>
       </div>
