@@ -28,231 +28,253 @@
 	  </div>
 	  <div class="span9">
 	    <h3>(Tentative) Task Description</h3>
-	    <p>In this pilot task, we set two subtasks to achieve and
-	      advance the technologies related to actionable knowledge graph
-	      presentations that can be used for search engines.</p>
+	    <p>In this pilot task, we set two subtasks to achieve and advance
+	      the technologies related to actionable knowledge graph presentations
+	      that can be used for search engines.</p>
 	    <h4>Action Mining Subtask (AM):</h4>
 	    <dd>
-	      <dt>Input: Entity Type and Entity</dt>
+	      <dt>Input: Entity, Entity Type, and Wikipedia URL</dt>
 	      <dt>Output: A ranked list of actions</dt>
 	    </dd><br/>
-	    <p>For a given entity type (e.g., place)
-	      and instance entities (e.g., poland), participants will be asked
-	      to find potential actions that can be taken (e.g., traveling to poland,
-	      buying a house in poland, finding weather in poland).
+	    <p>For a given entity type (e.g., Location) and instance entity (e.g., "poland"),
+	      participants will be asked to find potential actions that can be taken
+	      (e.g., "visit poland", "buy a house in poland", "find weather in poland").
 	      Participants are allowed to use any external resources
-	      (e.g., Action section in schema.org) to return a ranked list of potential actions.
-	      This subtask can be seen as an open information extraction task,
-	      and allows us to accumulate a comprehensive set of actions that are related to a given entity type.
-	      The returned actions will be assessed by crowdsourcing to score 1 to 5.
-	      Then, nDCG will be used to evaluate submitted runs.</p>
+	      (e.g., Action section in <a href="http://schema.org/">schema.org</a>)
+	      to return a ranked list of potential actions.
+	      Up to 100 actions should be submitted for each query (pair of entity and its type).
+	      The format of each submitted action should contain verb and object
+	      (called also the modifier of a verb), where the object's length is limited to 50 characters.
+	      For example, in the above-mentioned case of "poland" as the entity instance of the Location type,
+	      "buy a house in poland" would be an action composed of a verb "buy" and object "a house in poland".
+	      Participants are allowed to submit up to three actions that share the same verb.
+	      Note that actions can sometimes lack objects (actions containing only a verb), in which case,
+	      the object is actually considered NULL.
+	      For example, for the entity "outlook express" of the type Product, "download" is an example of
+	      correct action that does not require any explicit object specified.</p>
+	    <p>This subtask can be seen as an open information extraction task,
+	      and allows us to accumulate a comprehensive set of actions that are related
+	      to a given entity type and entity instance.
+	      The returned actions will be assessed by crowdsourcing to be scored from 1 to 5.
+	      Actions will be evaluated not only based on their relevance but also based on diversity in order
+	      to prevent submissions of many similar actions
+	      (e.g., actions where verbs are synonyms or the objects have very similar meaning).</p>
 	    <dd>
 	      <dt>Sample data</dt>
 	    </dd><br/>   
-		<table border=1>
-		<thead>
+	    <table border=1>
+	      <thead>
 		<tr>
-		<th style="text-align:left">Entity</th>
-		<th style="text-align:left">Types</th>
-		<th style="text-align:left">Verb</th>
-		<th style="text-align:left">Object</th>
-		<th style="text-align:left">Wikipedia</th>
+		  <th style="text-align:left">Entity</th>
+		  <th style="text-align:left">Types</th>
+		  <th style="text-align:left">Verb</th>
+		  <th style="text-align:left">Object</th>
+		  <th style="text-align:left">Wikipedia</th>
 		</tr>
-		</thead>
-		<tbody>
+	      </thead>
+	      <tbody>
 		<tr>
-		<td style="text-align:left">Final Fantasy VIII</td>
-		<td style="text-align:left">Product</td>
-		<td style="text-align:left">play</td>
-		<td style="text-align:left">on android</td>
-		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Final_Fantasy_VIII">https://en.wikipedia.org/wiki/Final_Fantasy_VIII</a></td>
-		</tr>
-		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">watch</td>
-		<td style="text-align:left">videos of other players</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left">Final Fantasy VIII</td>
+		  <td style="text-align:left">Product</td>
+		  <td style="text-align:left">play</td>
+		  <td style="text-align:left">on android</td>
+		  <td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Final_Fantasy_VIII">https://en.wikipedia.org/wiki/Final_Fantasy_VIII</a></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">buy</td>
-		<td style="text-align:left">new weapons</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">watch</td>
+		  <td style="text-align:left">videos of other players</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">compare</td>
-		<td style="text-align:left">with other games</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">buy</td>
+		  <td style="text-align:left">new weapons</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">learn</td>
-		<td style="text-align:left">junction system</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">compare</td>
+		  <td style="text-align:left">with other games</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left">Zambia</td>
-		<td style="text-align:left">Place</td>
-		<td style="text-align:left">mine</td>
-		<td style="text-align:left">copper</td>
-		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Zambia">https://en.wikipedia.org/wiki/Zambia</a></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">learn</td>
+		  <td style="text-align:left">junction system</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">prospect</td>
-		<td style="text-align:left">for minerals</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left">Zambia</td>
+		  <td style="text-align:left">Place</td>
+		  <td style="text-align:left">mine</td>
+		  <td style="text-align:left">copper</td>
+		  <td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Zambia">https://en.wikipedia.org/wiki/Zambia</a></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">produce</td>
-		<td style="text-align:left">row crops</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">prospect</td>
+		  <td style="text-align:left">for minerals</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">visit</td>
-		<td style="text-align:left">Kafue National Park</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">produce</td>
+		  <td style="text-align:left">row crops</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">watch</td>
-		<td style="text-align:left">national football games</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">visit</td>
+		  <td style="text-align:left">Kafue National Park</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left">Yo-Yo Ma</td>
-		<td style="text-align:left">Person</td>
-		<td style="text-align:left">transliterate</td>
-		<td style="text-align:left">his name in Chinese</td>
-		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Yo-Yo_Ma">https://en.wikipedia.org/wiki/Yo-Yo_Ma</a></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">watch</td>
+		  <td style="text-align:left">national football games</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">list</td>
-		<td style="text-align:left">cellos he has ever owned</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left">Yo-Yo Ma</td>
+		  <td style="text-align:left">Person</td>
+		  <td style="text-align:left">transliterate</td>
+		  <td style="text-align:left">his name in Chinese</td>
+		  <td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Yo-Yo_Ma">https://en.wikipedia.org/wiki/Yo-Yo_Ma</a></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">watch</td>
-		<td style="text-align:left">his performance at Apple keynotes</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">list</td>
+		  <td style="text-align:left">cellos he has ever owned</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">listen</td>
-		<td style="text-align:left">The Goat Rodeo Sessions</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">watch</td>
+		  <td style="text-align:left">his performance at Apple keynotes</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">buy</td>
-		<td style="text-align:left">a tickt of his concert</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">listen</td>
+		  <td style="text-align:left">The Goat Rodeo Sessions</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left">York University</td>
-		<td style="text-align:left">Organisation</td>
-		<td style="text-align:left">visit</td>
-		<td style="text-align:left">York University Observatory</td>
-		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/York_University">https://en.wikipedia.org/wiki/York_University</a></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">buy</td>
+		  <td style="text-align:left">a tickt of his concert</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">apply</td>
-		<td style="text-align:left">for an undergraduate program</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left">York University</td>
+		  <td style="text-align:left">Organisation</td>
+		  <td style="text-align:left">visit</td>
+		  <td style="text-align:left">York University Observatory</td>
+		  <td style="text-align:left"><a href="https://en.wikipedia.org/wiki/York_University">https://en.wikipedia.org/wiki/York_University</a></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">defer</td>
-		<td style="text-align:left">an offer</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">apply</td>
+		  <td style="text-align:left">for an undergraduate program</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">stay</td>
-		<td style="text-align:left">in a residence</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">defer</td>
+		  <td style="text-align:left">an offer</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">read</td>
-		<td style="text-align:left">Excalibur (university newspaper)</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">stay</td>
+		  <td style="text-align:left">in a residence</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left">Wireles Festival</td>
-		<td style="text-align:left">Event</td>
-		<td style="text-align:left">sponsor</td>
-		<td style="text-align:left">the event</td>
-		<td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Wireless_Festival">https://en.wikipedia.org/wiki/Wireless_Festival</a></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">read</td>
+		  <td style="text-align:left">Excalibur (university newspaper)</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">buy</td>
-		<td style="text-align:left">a ticket for one day</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left">Wireles Festival</td>
+		  <td style="text-align:left">Event</td>
+		  <td style="text-align:left">sponsor</td>
+		  <td style="text-align:left">the event</td>
+		  <td style="text-align:left"><a href="https://en.wikipedia.org/wiki/Wireless_Festival">https://en.wikipedia.org/wiki/Wireless_Festival</a></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">camp</td>
-		<td style="text-align:left">at the site</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">buy</td>
+		  <td style="text-align:left">a ticket for one day</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">contact</td>
-		<td style="text-align:left">for press enquiries</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">camp</td>
+		  <td style="text-align:left">at the site</td>
+		  <td style="text-align:left"></td>
 		</tr>
 		<tr>
-		<td style="text-align:left"></td>
-		<td style="text-align:left"></td>
-		<td style="text-align:left">reserve</td>
-		<td style="text-align:left">a big green coach</td>
-		<td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">contact</td>
+		  <td style="text-align:left">for press enquiries</td>
+		  <td style="text-align:left"></td>
 		</tr>
-		</tbody>
-		</table>
+		<tr>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left"></td>
+		  <td style="text-align:left">reserve</td>
+		  <td style="text-align:left">a big green coach</td>
+		  <td style="text-align:left"></td>
+		</tr>
+	      </tbody>
+	    </table>
 	    <br/>
+	    <ul>
+	      <li>Number of runs one group can submit: 3</li>
+	      <li>Number of actions one run can contain per entity query: 100</li>
+	      <li>Depth of pool for relevance assessments per entity query: 20</li>
+	    </ul>
+	    <hr/>
 	    <h4>Actionable Knowledge Graph Generation Subtask (AKGG):</h4>
 	    <dd>
-	      <dt>Input: Entity Type, Entity, and Action</dt>
-	      <dt>Ouput: A ranked list of attributes</dt>
+	      <dt>Input: Query, Entity Type, Entity, and Action</dt>
+	      <dt>Output: A ranked list of attributes of the type</dt>
 	    </dd><br/>
-	    <p>For a given entity, entity type, and action (e.g., Kyoto, place, visit a temple),
+	    <p>For a given search query, entity included in that query, the type of the entity,
+	      and action (e.g., "kyoto budget travel", "kyoto", location, "visit a temple"),
 	      participants will be asked to rank entity properties based on their relevance to the query.
-	      The query (input) will be ambiguous as in realistic search queries, and thus,
-	      researchers need to return the top N best entity properties to create an actionable knowledge graph.
-	      Actions in the testing queries will be taken from the outcomes of the Action Mining (AM) Subtask.
-	      Properties to be returned will be those that are defined in the knowledge base.
-	      Effectiveness of returned properties will be judged by pair-wise comparison performed by crowdsourcing for all pairs of submitted runs.
-	      We are currently considering to propose a new metric that can take preference
-	      based judgements into account, by applying Bradley-Terry model.</p>
-	      
+	      The query (input) can be ambiguous as in realistic search queries,
+	      and participants need to return the top N relevant entity properties
+	      to create an actionable knowledge graph.
+	      Actions in the test queries will be taken from the outcomes of the Action Mining (AM) Subtask.
+	      Properties to be returned will be those defined as attributes of the entity type in
+	      <a href="http://schema.org/">schema.org</a> vocabulary.</p>
+	    <p>Effectiveness of the returned properties will be judged by pair-wise comparison performed
+	      by crowdsourcing for all pairs of submitted runs.
+	      We are currently considering to propose a new metric that can take preference based judgements into account,
+	      by applying Bradley-Terry model.</p>	      
 	  </div>
 	</div>
       </div>
