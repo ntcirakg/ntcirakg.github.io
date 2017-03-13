@@ -159,33 +159,31 @@
 		<li>action</li>
 		</ul>
 		</li>
-		<li>Input (query) file is formatted in the following way.</li>
 		</ul>
-		<pre><code>{
-  &lt;!-- Information about this task //--&gt;
-  &quot;ntcirtask&quot;: &quot;NTCIR-13 Actionable Knowledge Graph (AKG)&quot;,
-  &quot;subtask&quot;: &quot;Action Mining&quot;,
-  &quot;runtype&quot;: &quot;Formal Run&quot;,
-  &lt;!-- Query data //--&gt;
-  &quot;queries&quot;: [
-    &lt;!-- First query starts //--&gt;
-    {
-      &lt;!-- Information about 1st query //--&gt;
-      &quot;queryid&quot;: &quot;ID of this query&quot;,
-      &quot;entity&quot;: &quot;Entity of this query&quot;,
-      &quot;entitytypes&quot;: [
-        &quot;Entity types of this query&quot;
-      ],
-      &quot;entityurl&quot;: &quot;URL to a Wikipedia page of this entity&quot;,
-    }, &lt;!-- First query ends //--&gt;
-    &lt;!-- Second query starts //--&gt;
-    {
-      ...
-    },
-    ...
-  ]
-}</code></pre>
+		<pre></pre>
 		<br/>
+		  <h5>Format for outputs (runs)</h5>
+		<ul>
+		<li>Elements
+		<ul>
+		<li>Group ID</li>
+		<li>Run ID</li>
+		<li>System description</li>
+		<li>Query ID</li>
+		<li>Properties
+		<ul>
+		<li>Rank</li>
+		<li>Property</li>
+		</ul>
+		</li>
+		</ul>
+		</li>
+		<li>Participants are required to submit run data using the following format.
+		<ul>
+		<li>File name of your run file must be <code>am-dryrun-[groupid].json</code></li>
+		</ul>
+		</li>
+		</ul>
 	  </div>
 	</div>
       </div>
