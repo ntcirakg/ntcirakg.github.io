@@ -32,7 +32,7 @@
 	    <p>The format for input/output files currently defined by AKG is as follows.</p>
 	    <ul>
 	    <li><a href="#amdry">Action Mininig subtak (Formal Run)</a></li>
-	    <li><a href="#akggdry">Actionable Knowledge Graph Generation subtask (Dry Run)</a></li>
+	    <li><a href="#akggdry">Actionable Knowledge Graph Generation subtask (Formal Run)</a></li>
 	    </ul>
 
 	    <p><b>All run files must be submitted to ntcir-akg [at] googlegroups [dot] com via email with the subject: Dry/Formal run submission for AM/AKGG subtask.</b></p>
@@ -160,6 +160,32 @@
 		</ul>
 		</li>
 		</ul>
+		  <li>Input (query) file is formatted in the following way.</li>
+		</ul>
+		<pre><code>{
+  &lt;!-- Information about this task //--&gt;
+  &quot;ntcirtask&quot;: &quot;NTCIR-13 Actionable Knowledge Graph (AKG)&quot;,
+  &quot;subtask&quot;: &quot;Action Mining&quot;,
+  &quot;runtype&quot;: &quot;Formal Run&quot;,
+  &lt;!-- Query data //--&gt;
+  &quot;queries&quot;: [
+    &lt;!-- First query starts //--&gt;
+    {
+      &lt;!-- Information about 1st query //--&gt;
+      &quot;queryid&quot;: &quot;ID of this query&quot;,
+      &quot;entity&quot;: &quot;Entity of this query&quot;,
+      &quot;entitytypes&quot;: [
+        &quot;Entity types of this query&quot;
+      ],
+      &quot;entityurl&quot;: &quot;URL to a Wikipedia page of this entity&quot;,
+    }, &lt;!-- First query ends //--&gt;
+    &lt;!-- Second query starts //--&gt;
+    {
+      ...
+    },
+    ...
+  ]
+}</code></pre>
 
 		<br/>
 		  <h5>Format for outputs (runs)</h5>
