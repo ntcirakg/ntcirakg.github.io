@@ -212,7 +212,7 @@
 			<pre><code>{
   &lt;!-- Information about this task //--&gt;
   &quot;ntcirtask&quot;: &quot;NTCIR-13 Actionable Knowledge Graph (AKG)&quot;,
-  &quot;subtask&quot;: &quot;Action Mining&quot;,
+  &quot;subtask&quot;: &quot;Actionable Knowledge Graph Generation&quot;,
   &quot;runtype&quot;: &quot;Formal Run&quot;,
   &lt;!-- Information about your group //--&gt;
   &quot;groupid&quot;: &quot;ID of your group as registered at NTCIR-13&quot;,
@@ -228,14 +228,13 @@
         &lt;!-- Results of 1st query //--&gt;
         {
           &quot;queryid&quot;: &quot;ID of queries as defined in our input file&quot;,
-          &quot;actions&quot;: [
-            &lt;!-- 1st action for this query //--&gt;
+          &quot;properties&quot;: [
+            &lt;!-- 1st property for this query //--&gt;
             {
               &quot;rank&quot;: &quot;Rank position of this action (1-100)&quot;
-              &quot;verb&quot;: &quot;Verb of this action&quot;,
-              &quot;object&quot;: &quot;Object of this action (null or max 50 chars)&quot;
+              &quot;property&quot;: &quot;property string&quot;,
             },
-            &lt;!-- 2nd action for this query //--&gt;
+            &lt;!-- 2nd property for this query //--&gt;
             {
               ...
             },
