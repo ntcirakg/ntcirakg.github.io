@@ -95,7 +95,7 @@
 		</li>
 		<li>Participants are required to submit run data using the following format.
 		<ul>
-		<li>File name of your run file must be <code>am-dryrun-[groupid].json</code></li>
+		<li>File name of your run file must be <code>am-formalrun-[groupid].json</code></li>
 		</ul>
 		</li>
 		</ul>
@@ -207,8 +207,55 @@
 		</li>
 		<li>Participants are required to submit run data using the following format.
 		<ul>
-		<li>File name of your run file must be <code>akgg-dryrun-[groupid].json</code></li>
+		<li>File name of your run file must be <code>akgg-formalrun-[groupid].json</code></li>
 		</ul>
+			<pre><code>{
+  &lt;!-- Information about this task //--&gt;
+  &quot;ntcirtask&quot;: &quot;NTCIR-13 Actionable Knowledge Graph (AKG)&quot;,
+  &quot;subtask&quot;: &quot;Action Mining&quot;,
+  &quot;runtype&quot;: &quot;Formal Run&quot;,
+  &lt;!-- Information about your group //--&gt;
+  &quot;groupid&quot;: &quot;ID of your group as registered at NTCIR-13&quot;,
+  &lt;!-- Run data //--&gt;
+  &quot;runs&quot;: [
+    &lt;!-- First run starts //--&gt;
+    {
+      &lt;!-- Information about 1st run //--&gt;
+      &quot;runid&quot;: &quot;ID of this run (string)&quot;,
+      &quot;systemdescription&quot;: &quot;System description for this run&quot;,
+      &lt;!-- Results of 1st run //--&gt;
+      &quot;results&quot;: {
+        &lt;!-- Results of 1st query //--&gt;
+        {
+          &quot;queryid&quot;: &quot;ID of queries as defined in our input file&quot;,
+          &quot;actions&quot;: [
+            &lt;!-- 1st action for this query //--&gt;
+            {
+              &quot;rank&quot;: &quot;Rank position of this action (1-100)&quot;
+              &quot;verb&quot;: &quot;Verb of this action&quot;,
+              &quot;object&quot;: &quot;Object of this action (null or max 50 chars)&quot;
+            },
+            &lt;!-- 2nd action for this query //--&gt;
+            {
+              ...
+            },
+            ...
+          ]
+        },
+        &lt;!-- Results of 2nd query //--&gt;
+        {
+          ...
+        },
+        ...
+      }
+    }, &lt;!-- First run ends //--&gt;
+    &lt;!-- Second run starts //--&gt;
+    {
+      ...
+    },
+    ...
+  ]
+}</code></pre>
 		</li>
 		</ul>
 	  </div>
